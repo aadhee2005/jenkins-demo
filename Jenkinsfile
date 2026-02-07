@@ -4,20 +4,29 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checkout stage from Jenkinsfile'
+                echo 'Checkout stage'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Build stage from Jenkinsfile'
+                echo 'Build stage'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Test stage from Jenkinsfile'
+                echo 'Test stage'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'BUILD SUCCESSFUL'
+        }
+        failure {
+            echo 'BUILD FAILED'
         }
     }
 }
